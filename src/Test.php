@@ -23,6 +23,6 @@ class Test
     private $data;
 
     // Just required because schema tool will remove virtual column otherwise
-    #[ORM\Column(type: "integer", columnDefinition: "integer GENERATED ALWAYS AS (json_unquote(json_extract(data, '$.value'))) VIRTUAL")]
+    #[ORM\Column(type: "integer", columnDefinition: "integer GENERATED ALWAYS AS (json_unquote(json_extract(data, _utf8mb4.'$.value'))) VIRTUAL")]
     private $data_value;
 }
